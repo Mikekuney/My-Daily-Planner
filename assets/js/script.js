@@ -1,3 +1,8 @@
+var tasks;
+var newTasks;
+var saveBtn;
+
+// using moment.js functions
 var currentHour = moment().format("HH")
 var workHour = moment().startOf('day').add(7, "hour")
 $("#currentDay").text(moment().format("dddd, MMMM, do YYYY"))
@@ -35,4 +40,15 @@ var dayHours = function() {
             $(textInputEl).attr("class", "col-10 row present")
         }
     }
+    // click function
+    $('.saveBtn').click(function() {
+        var newKey = $(this).attr("key");
+        console.log(newKey);
+        var textArea = $(this).parent().children("textarea").val();
+        timeMap[newKey] = textArea;
+        console.log(timeMap);
+        window.localStorage.setItem('timeMap', JSON.stringify(timeMap));
+        console.log(textArea);
+    })
 }
+dayHours();
