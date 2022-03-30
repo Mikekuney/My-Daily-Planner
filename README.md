@@ -12,3 +12,4 @@
 
 # Website
 - http://mikekuney.github.io/My-Daily-Planner/
+![Screenshot (7)](https://user-images.githubusercontent.com/96913841/160834157-f44d54e8-f0c0-400e-837b-091513df35ac.png)
