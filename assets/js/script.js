@@ -3,9 +3,9 @@ var newTasks;
 var saveBtn;
 
 // using moment.js functions
-var currentHour = moment().format("HH")
-var workHour = moment().startOf('day').add(7, "hour")
-$("#currentDay").text(moment().format("dddd, MMMM, do YYYY"))
+var currentHour = moment().format("HH");
+var workHour = moment().startOf('day').add(7, "hour");
+$("#currentDay").text(moment().format("dddd, MMMM, Do YYYY"));
 
 // function with for loop to create timeblocks
 var dayHours = function() {
@@ -14,7 +14,7 @@ var dayHours = function() {
     var timeMap = JSON.parse(localStorage.getItem("timeMap")) || {};
 
     // loop to create Timeblocks
-    for(var i =8; i < 17; i++) {
+    for(var i = 8; i < 17; i++) {
         var workDay = workHour.add(1, "hour").format("h A");
 
         // Update timeblock textarea 
@@ -22,12 +22,12 @@ var dayHours = function() {
         timeMap[key] = timeMap[key] || null;
 
         var row = $("<div></div>").addClass("row time-block");
-        var hour = $("</div></div>").addClass("col-1 hour");
+        var hour = $("<div></div>").addClass("col-1 hour");
         var textInputEl = $("<textarea></textarea>").addClass("col-10 textInputClass").val(timeMap[key]);
         var saveBtn = $("<button></button>").addClass("col-1 fa fa-save saveBtn").attr("key", key);
 
         $(".container").append(row);
-        $(row).append(hour.textInputEl,saveBnt);
+        $(row).append(hour,textInputEl,saveBtn);
 
         $(hour).text(workDay);
 
